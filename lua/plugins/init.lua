@@ -13,6 +13,17 @@ return {
     end,
   },
 
+  {
+   'mrcjkb/rustaceanvim',
+   version = '^6', -- Recommended
+   lazy = false, -- This plugin is already lazy
+  },
+  {
+    "Yu-Leo/blame-column.nvim",
+    opts = {}, -- for default options. Refer to the configuration section for custom setup.
+    cmd = "BlameColumnToggle",
+  }
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
