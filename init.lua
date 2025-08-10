@@ -37,3 +37,4 @@ vim.schedule(function()
 end)
 
 vim.opt.shell = "/bin/bash"
+require('overseer').setup()
