@@ -26,7 +26,17 @@ return {
   {
     'stevearc/overseer.nvim',
     opts = {},
-  }
+  },
+  
+{
+  "miziakmwa/typescript-tools.nvim",
+  ft = { "typescript", "tsx" },
+  config = function()
+    require("typescript-tools").setup({
+      -- plugin options (see README)
+    })
+  end,
+}
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
