@@ -29,7 +29,7 @@ return {
   },
   
 {
-  "miziakmwa/typescript-tools.nvim",
+  "git@github.com:pmizio/typescript-tools.nvim",
   ft = { "typescript", "tsx" },
   config = function()
     require("typescript-tools").setup({
