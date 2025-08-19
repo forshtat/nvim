@@ -14,7 +14,11 @@ vim.keymap.set("n", "<leader>i", function()
   vim.lsp.buf.code_action({
     apply = true
   })
-end, { desc = "Auto-import first suggestion" })
-
+end, { desc = "Code Action" })
+vim.keymap.set("v", "<leader>i", function()
+  vim.lsp.buf.code_action({
+    apply = false
+  })
+end, { desc = "Code Action" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

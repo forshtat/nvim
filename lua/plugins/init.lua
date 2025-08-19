@@ -36,6 +36,24 @@ return {
       -- plugin options (see README)
     })
   end,
+},
+{
+  "folke/snacks.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {
+    lazygit = { enabled = true },
+  },
+  keys = {
+    {
+      "<leader>gg",
+      function()
+        -- run lazygit in the current working directory
+        Snacks.lazygit({ cwd = vim.loop.cwd() })
+      end,
+      desc = "Lazygit (cwd)",
+    },
+  },
 }
 
   -- test new blink
