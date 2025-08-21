@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require("lspconfig")
 
 -- Default servers
-local servers = { "html", "cssls" }
+local servers = { "html", "cssls", "jsonls" }
 vim.lsp.enable(servers)
 
 -- Solidity LSP setup with explicit configuration
@@ -14,5 +14,11 @@ lspconfig.solidity.setup({
   single_file_support = true,
 })
 -- npm install -g @nomicfoundation/solidity-language-server
+
+-- JSON LSP setup
+lspconfig.jsonls.setup({
+  filetypes = { "json", "jsonc" },
+})
+-- npm install -g vscode-langservers-extracted
 
 -- read :h vim.lsp.config for changing options of lsp servers

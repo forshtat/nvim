@@ -4,6 +4,14 @@ local options = {
     -- css = { "prettier" },
     solidity = { "forge" }, -- Using forge fmt for Solidity formatting
     -- html = { "prettier" },
+
+    -- Add TypeScript/JavaScript formatting
+    -- npm install -g prettier
+    typescript = { "prettier" },
+    typescriptreact = { "prettier" },
+    javascript = { "prettier" },
+    javascriptreact = { "prettier" },
+    json = { "prettier" },
   },
 
   -- format_on_save = {
