@@ -2,6 +2,7 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     -- css = { "prettier" },
+    solidity = { "forge" }, -- Using forge fmt for Solidity formatting
     -- html = { "prettier" },
   },
 

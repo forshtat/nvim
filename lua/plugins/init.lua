@@ -13,6 +13,17 @@ return {
     end,
   },
 
+  -- Enable Solidity syntax highlighting
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim", "lua", "vimdoc",
+        "html", "css", "solidity"
+      },
+    },
+  },
+
   {
    'mrcjkb/rustaceanvim',
    version = '^6', -- Recommended
@@ -27,7 +38,7 @@ return {
     'stevearc/overseer.nvim',
     opts = {},
   },
-  
+
 {
   "git@github.com:pmizio/typescript-tools.nvim",
   ft = { "typescript", "tsx" },
