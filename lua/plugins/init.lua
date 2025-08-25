@@ -65,6 +65,11 @@ return {
       desc = "Lazygit (cwd)",
     },
   },
+},
+{
+  "yutkat/confirm-quit.nvim",
+  event = "CmdlineEnter",
+  opts = {},
 }
 
   -- test new blink
