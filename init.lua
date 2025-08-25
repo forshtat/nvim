@@ -41,3 +41,13 @@ require('overseer').setup()
 
 vim.wo.relativenumber = true
 
+-- Move lines up and down with Ctrl+Shift+j / Ctrl+Shift+k
+vim.keymap.set("n", "<C-S-j>", "mz:m+<CR>`z==", { silent = true })
+vim.keymap.set("n", "<C-S-k>", "mz:m-2<CR>`z==", { silent = true })
+
+vim.keymap.set("i", "<C-S-j>", "<Esc>:m+<CR>==gi", { silent = true })
+vim.keymap.set("i", "<C-S-k>", "<Esc>:m-2<CR>==gi", { silent = true })
+
+vim.keymap.set("v", "<C-S-j>", ":m'>+<CR>gv=`<my`>mzgv`yo`z", { silent = true })
+vim.keymap.set("v", "<C-S-k>", ":m'<-2<CR>gv=`>my`<mzgv`yo`z", { silent = true })
+
