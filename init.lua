@@ -38,3 +38,6 @@ end)
 
 vim.opt.shell = "/bin/bash"
 require('overseer').setup()
+
+vim.wo.relativenumber = true
+
