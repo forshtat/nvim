@@ -75,6 +75,17 @@ return {
     'ThePrimeagen/vim-be-good',
     lazy = false,
 },
+
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    lazy = false,
+    init = function()
+      vim.g.VM_maps = {
+        ["Find Under"] = "<C-m>"
+      }
+    end,
+  }
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
