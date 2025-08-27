@@ -70,8 +70,11 @@ return {
   "yutkat/confirm-quit.nvim",
   event = "CmdlineEnter",
   opts = {},
-}
-
+},
+{
+    'ThePrimeagen/vim-be-good',
+    lazy = false,
+},
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
