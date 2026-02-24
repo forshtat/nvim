@@ -1,24 +1,17 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require("lspconfig")
+vim.lsp.enable({ "html", "cssls", "jsonls" })
 
--- Default servers
-local servers = { "html", "cssls", "jsonls" }
-vim.lsp.enable(servers)
-
--- Solidity LSP setup with explicit configuration
-lspconfig.solidity.setup({
+vim.lsp.config.solidity = {
   cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
   filetypes = { "solidity" },
-  root_dir = lspconfig.util.find_git_ancestor,
+  root_dir = function(fname)
+    return vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true, path = fname })[1])
+  end,
   single_file_support = true,
-})
--- npm install -g @nomicfoundation/solidity-language-server
+}
+vim.lsp.enable("solidity")
 
--- JSON LSP setup
-lspconfig.jsonls.setup({
+vim.lsp.config.jsonls = {
   filetypes = { "json", "jsonc" },
-})
--- npm install -g vscode-langservers-extracted
-
--- read :h vim.lsp.config for changing options of lsp servers
+}

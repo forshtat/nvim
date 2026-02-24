@@ -99,7 +99,7 @@ return {
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
-}
+},
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
