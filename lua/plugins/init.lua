@@ -13,6 +13,24 @@ return {
     end,
   },
 
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+    opts = {
+      ensure_installed = {
+        -- LSP servers
+        "gopls",
+        "html-lsp",
+        "css-lsp",
+        "json-lsp",
+        -- Formatters
+        "goimports",
+        "prettier",
+        "stylua",
+      },
+    },
+  },
+
   -- Enable Solidity syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
