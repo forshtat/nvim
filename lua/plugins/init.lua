@@ -19,8 +19,9 @@ return {
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc",
-        "html", "css", "solidity", "json"
+        "html", "css", "solidity", "json", "go", "gomod", "gosum"
       },
+      highlight = { enable = true },
     },
   },
 

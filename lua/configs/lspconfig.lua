@@ -1,6 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
-vim.lsp.enable({ "html", "cssls", "jsonls" })
+vim.lsp.enable({ "html", "cssls", "jsonls", "gopls" })
 
 vim.lsp.config.solidity = {
   cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
