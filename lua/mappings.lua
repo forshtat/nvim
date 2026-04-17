@@ -24,3 +24,13 @@ vim.keymap.set("v", "<leader>i", function()
 end, { desc = "Code Action" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- Run (overseer) — mirrors IntelliJ Run tool window
+map("n", "<leader>rr", "<cmd>OverseerRun<CR>",         { desc = "Run: pick config" })
+map("n", "<leader>rl", "<cmd>OverseerRestartLast<CR>", { desc = "Run: rerun last" })
+map("n", "<leader>ro", "<cmd>OverseerToggle<CR>",      { desc = "Run: open panel" })
+map("n", "<leader>rq", "<cmd>OverseerClose<CR>",       { desc = "Run: close panel" })
+map("n", "<leader>rx", "<cmd>OverseerShell<CR>",       { desc = "Run: shell command" })
+
+local ok, wk = pcall(require, "which-key")
+if ok then wk.add({ { "<leader>r", group = "Run" } }) end

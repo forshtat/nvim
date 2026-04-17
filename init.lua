@@ -37,7 +37,8 @@ vim.schedule(function()
 end)
 
 vim.opt.shell = "/bin/bash"
-require('overseer').setup()
+vim.o.exrc = true
+vim.o.secure = true
 
 vim.wo.relativenumber = true
 

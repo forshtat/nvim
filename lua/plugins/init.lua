@@ -55,7 +55,36 @@ return {
   },
   {
     'stevearc/overseer.nvim',
-    opts = {},
+    cmd = { "OverseerRun", "OverseerToggle", "OverseerOpen", "OverseerClose", "OverseerShell" },
+    opts = {
+      task_list = {
+        direction = "bottom",
+        min_height = 12,
+        max_height = 0.3,
+      },
+      component_aliases = {
+        default = {
+          "on_exit_set_status",
+          "on_complete_notify",
+          { "on_complete_dispose", statuses = { "SUCCESS" }, require_view = { "SUCCESS" } },
+        },
+      },
+    },
+    config = function(_, opts)
+      require('overseer').setup(opts)
+
+      vim.api.nvim_create_user_command("OverseerRestartLast", function()
+        local overseer = require("overseer")
+        local tasks = overseer.list_tasks({
+          sort = require("overseer.task_list").sort_newest_first,
+        })
+        if vim.tbl_isempty(tasks) then
+          vim.notify("No recent tasks to restart", vim.log.levels.WARN)
+        else
+          overseer.run_action(tasks[1], "restart")
+        end
+      end, { desc = "Restart the most recent overseer task" })
+    end,
   },
 
 {
