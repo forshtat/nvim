@@ -67,6 +67,7 @@ return {
           "on_exit_set_status",
           "on_complete_notify",
           { "on_complete_dispose", statuses = { "SUCCESS" }, require_view = { "SUCCESS" } },
+          { "open_output", on_start = "always", direction = "dock" },
         },
       },
     },
@@ -84,6 +85,18 @@ return {
           overseer.run_action(tasks[1], "restart")
         end
       end, { desc = "Restart the most recent overseer task" })
+
+      vim.api.nvim_create_user_command("OverseerStopLast", function()
+        local overseer = require("overseer")
+        local tasks = overseer.list_tasks({
+          sort = require("overseer.task_list").sort_newest_first,
+        })
+        if vim.tbl_isempty(tasks) then
+          vim.notify("No recent tasks to stop", vim.log.levels.WARN)
+        else
+          overseer.run_action(tasks[1], "stop")
+        end
+      end, { desc = "Stop the most recent overseer task" })
     end,
   },
 

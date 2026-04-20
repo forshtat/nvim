@@ -28,6 +28,7 @@ end, { desc = "Code Action" })
 -- Run (overseer) — mirrors IntelliJ Run tool window
 map("n", "<leader>rr", "<cmd>OverseerRun<CR>",         { desc = "Run: pick config" })
 map("n", "<leader>rl", "<cmd>OverseerRestartLast<CR>", { desc = "Run: rerun last" })
+map("n", "<leader>rs", "<cmd>OverseerStopLast<CR>",    { desc = "Run: stop last" })
 map("n", "<leader>ro", "<cmd>OverseerToggle<CR>",      { desc = "Run: open panel" })
 map("n", "<leader>rq", "<cmd>OverseerClose<CR>",       { desc = "Run: close panel" })
 map("n", "<leader>rx", "<cmd>OverseerShell<CR>",       { desc = "Run: shell command" })
