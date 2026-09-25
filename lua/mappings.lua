@@ -9,6 +9,12 @@ map("n", "<leader>a", "<cmd>Telescope keymaps<CR>", { desc = "Search keymaps" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+-- § acts as an extra Escape (for keyboards without a physical Esc key)
+-- remap = true so it also triggers any existing <Esc> mappings (e.g. NvChad's :noh)
+map({ "n", "i", "v", "s", "o" }, "§", "<Esc>", { remap = true, desc = "Escape" })
+map("c", "§", "<C-c>", { desc = "Cancel command line" })
+map("t", "§", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
