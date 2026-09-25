@@ -163,6 +163,13 @@ return {
   },
 },
 
+  -- Scrollbar with diagnostics / git / search marks
+  {
+    "lewis6991/satellite.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
