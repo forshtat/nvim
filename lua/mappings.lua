@@ -39,5 +39,8 @@ map("n", "<leader>ro", "<cmd>OverseerToggle<CR>",      { desc = "Run: open panel
 map("n", "<leader>rq", "<cmd>OverseerClose<CR>",       { desc = "Run: close panel" })
 map("n", "<leader>rx", "<cmd>OverseerShell<CR>",       { desc = "Run: shell command" })
 
+-- Git blame column (IntelliJ "Annotate with Git Blame")
+map("n", "<leader>gb", "<cmd>BlameColumnToggle<CR>", { desc = "Git: toggle blame column" })
+
 local ok, wk = pcall(require, "which-key")
 if ok then wk.add({ { "<leader>r", group = "Run" } }) end
